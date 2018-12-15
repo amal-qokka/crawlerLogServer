@@ -27,7 +27,7 @@ class CrawlLogHandler(http.server.BaseHTTPRequestHandler):
 
 if __name__ == '__main__':
     server_class = http.server.HTTPServer
-    HOST_NAME = 'localhost'
+    HOST_NAME = '0.0.0.0'
     PORT_NUMBER = 8890
     httpd = server_class((HOST_NAME, PORT_NUMBER), CrawlLogHandler)
     print(time.asctime(), 'Server Starts - %s:%s' % (HOST_NAME, PORT_NUMBER))
