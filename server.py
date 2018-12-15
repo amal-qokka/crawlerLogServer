@@ -1,8 +1,9 @@
 import http
 import http.server
-import http.HTTPServer
 import time
 
+
+# server_class = http.server.HTTPServer
 
 class CrawlLogHandler(http.server.BaseHTTPRequestHandler):
     def do_HEAD(self):
@@ -25,7 +26,7 @@ class CrawlLogHandler(http.server.BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
-    server_class = http.HTTPServer
+    server_class = http.server.HTTPServer
     HOST_NAME = 'localhost'
     PORT_NUMBER = 8890
     httpd = server_class((HOST_NAME, PORT_NUMBER), CrawlLogHandler)
